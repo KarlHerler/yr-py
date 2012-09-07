@@ -19,7 +19,7 @@ This is found in `yr.weather` after the data has been fetched and parsed. This
 structure is an array with maps of the following format:
 ```python
 {
-	weather': {'number': <int>, 'name': <str>, 'var': '<str>'},
+	'weather': {'number': <int>, 'name': <str>, 'var': '<str>'},
 	'precipitation': {'value': <decimal>, 'minvalue': <decimal>, 'maxvalue':<decimal>},
 	'wind': {
 		'direction': {'deg':<decimal>, 'code':<str>, 'name':<str>},
@@ -32,7 +32,7 @@ structure is an array with maps of the following format:
 ###Example
 ```python
 {
-	weather': {'number': 3, 'name': "Partly Cloudy", 'var': "mf/03n.70"},
+	'weather': {'number': 3, 'name': "Partly Cloudy", 'var': "mf/03n.70"},
 	'precipitation': {'value': 0.2, 'minvalue': 0, 'maxvalue': 0.5},
 	'wind': {
 		'direction': {'deg':297.1, 'code':"WNW", 'name': "West-northwest"},

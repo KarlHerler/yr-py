@@ -26,7 +26,7 @@ structure is an array with maps of the following format:
 		'speed': {'mps':<decimal>, 'name':<str>}
 	},
 	'temperature': {'unit':<str>, 'value':<decimal>},
-	'pressure': {'unit':<str>, 'value'=<decimal>}
+	'pressure': {'unit':<str>, 'value':<decimal>}
 }
 ```
 ###Example
@@ -39,7 +39,7 @@ structure is an array with maps of the following format:
 		'speed': {'mps':"5.8", 'name':"Moderate breeze"}
 	},
 	'temperature': {'unit':"celsius", 'value':12},
-	'pressure': {'unit':"hPa", 'value'=1001.0}
+	'pressure': {'unit':"hPa", 'value':1001.0}
 }
 ```
 

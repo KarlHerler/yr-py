@@ -10,4 +10,5 @@ setup(
     author='Karl Herler',
     author_email='hi@karlherler.com',
     long_description=open('README').read(),
+    platforms='any'
 )

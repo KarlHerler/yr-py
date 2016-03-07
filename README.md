@@ -1,25 +1,27 @@
-#yr-py
+# yr-py
 
 This is a simple python library for interacting with the brilliant [yr.no](http://yr.no) weather service.
 
 
-##Installing
+## Installing
 Just drop the yr.py file in your project and import it. (I'll probably put it on pip at some point)
 
-##Usage
+## Usage
  - Import the library to wherever you want to use it using `from yr import yr`
- - Create a weather instance using `weather = yr("Finland/Western_Finland/Turku")` where the 
+ - Create a weather instance using `weather = yr("Finland/Western_Finland/Turku")` where the
    parameter is the fully qualified geoname. You can also specify a False flag if you do not want
    the library to fetch the data on creation.
  - access the forecast data in `yr.weather`, this will be an array with forecast maps
 
 
-##The weather struct
-This is found in `yr.weather` after the data has been fetched and parsed. This 
+## The weather struct
+This is found in `yr.weather` after the data has been fetched and parsed. This
 structure is an array with maps of the following format:
+
 ```python
 {
-	'weather': {'number': <int>, 'name': <str>, 'var': '<str>'},
+    'time': { 'from': <time>, 'to': <time>, 'period': <int>},
+	'weather': {'number': <int>, 'name': <str>, 'var': <str>},
 	'precipitation': {'value': <decimal>, 'minvalue': <decimal>, 'maxvalue':<decimal>},
 	'wind': {
 		'direction': {'deg':<decimal>, 'code':<str>, 'name':<str>},
@@ -29,9 +31,14 @@ structure is an array with maps of the following format:
 	'pressure': {'unit':<str>, 'value':<decimal>}
 }
 ```
-###Example
+
+NOTE: Timezone is always local time, the period signifies part of the day (0: night, 1: morning, 2: afteroon, 3: evening)
+
+### Example
+
 ```python
 {
+    'time': { 'from': <time>, 'to': <time>, 'period': <int>},
 	'weather': {'number': 3, 'name': "Partly Cloudy", 'var': "mf/03n.70"},
 	'precipitation': {'value': 0.2, 'minvalue': 0, 'maxvalue': 0.5},
 	'wind': {
@@ -43,8 +50,7 @@ structure is an array with maps of the following format:
 }
 ```
 
-
-##Notes about usage
-Since yr.no gives away their data for free they want you to limit your queries 
-to one query per zone per 10 minutes. You should cache the results if you think 
+## Notes about usage
+Since yr.no gives away their data for free they want you to limit your queries
+to one query per zone per 10 minutes. You should cache the results if you think
 that you will come close to this limit.

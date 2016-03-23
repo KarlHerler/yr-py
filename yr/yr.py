@@ -1,4 +1,5 @@
 import urllib2
+import urllib
 import xml.etree.ElementTree as et
 import xml.etree.cElementTree as et
 #import lxml.etree as et
@@ -19,7 +20,7 @@ class yr:
 		yr_end_url  = "/forecast.xml" #alt /forecast_hour_by_hour.xml
 
 		if fetch:
-			self.weather = self.get_weather(yr_base_url+geoname+yr_end_url)
+			self.weather = self.get_weather(yr_base_url+urllib.quote(geoname)+yr_end_url)
 
 
 	# Private: Fetches the weather data for the given geoname

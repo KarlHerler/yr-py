@@ -38,7 +38,7 @@ NOTE: Timezone is always local time, the period signifies part of the day (0: ni
 
 ```python
 {
-    'time': { 'from': <time>, 'to': <time>, 'period': <int>},
+    'time': { 'from': '2016-03-21T12:13:41', 'to': '2016-03-21T14:13:41', 'period': <int>},
 	'weather': {'number': 3, 'name': "Partly Cloudy", 'var': "mf/03n.70"},
 	'precipitation': {'value': 0.2, 'minvalue': 0, 'maxvalue': 0.5},
 	'wind': {

@@ -33,8 +33,16 @@ class yr:
 	#
 	# Returns an array of weather maps
 	def get_weather(self, url):
-		p = urllib2.urlopen(url).read()
-		return self.parse_xml(p)
+		try:
+			p = urllib2.urlopen(url).read()
+			return self.parse_xml(p)
+		except urllib2.HTTPError, err:
+			if err.code == 404:
+				raise NameError("The requested area was not found")
+	  		elif err.code == 500:
+				raise IOError("Server returned error 500")
+			else:
+				raise
 
 
 	# Private: Parses url data to a structure

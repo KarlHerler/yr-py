@@ -17,7 +17,7 @@ class yr:
 
 	def __init__(self, geoname,fetch=True):
 		yr_base_url = "http://www.yr.no/place/"
-		yr_end_url  = "/forecast.xml" #alt /forecast_hour_by_hour.xml
+		yr_end_url  = "/forecast_hour_by_hour.xml" # alt /forecast.xml
 
 		if fetch:
 			self.weather = self.get_weather(yr_base_url+urllib.quote(geoname)+yr_end_url)
